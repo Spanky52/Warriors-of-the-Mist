@@ -1,0 +1,12 @@
+# ninja log v5
+111	632	7718393130796254	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	370789e125ef0daa
+639	1173	7718393135332975	C:/Users/herme/Archivos/Warriors-of-the-Mist/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6o3g6c3e/obj/arm64-v8a/libswappywrapper.so	85caa7e7d9d71248
+87	3646	7718393160186103	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	588a0f85c9f22f0e
+60	3658	7718393160559709	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6870572618a539a9
+20	3761	7718393161118420	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	63d3415eeaf93afe
+35	3767	7718393161500726	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	b03fe8d70cd99be2
+11	3821	7718393162516524	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	215fcdf93409afec
+74	3947	7718393164216991	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	464b9942e6895ae
+46	3960	7718393164338804	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5cef10ae02ca7ce7
+1	4116	7718393165985614	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b6c2f6b42d2892df
+4117	4246	7718393167367165	C:/Users/herme/Archivos/Warriors-of-the-Mist/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6o3g6c3e/obj/arm64-v8a/libgame.so	a9497f47f05825c6
