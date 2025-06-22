@@ -41,26 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Grass
-    uniqueID: 3786966319
+  - name: First floor
+    uniqueID: 518493613
     locked: 0
-  - name: Wall
-    uniqueID: 2421858721
-    locked: 0
-  - name: Enemys
-    uniqueID: 1307383341
+  - name: Second floor
+    uniqueID: 3309360379
     locked: 0
   - name: Player
     uniqueID: 3746132787
-    locked: 0
-  - name: Grass_Hight
-    uniqueID: 4033064349
-    locked: 0
-  - name: Wall_Hight
-    uniqueID: 1072850359
-    locked: 0
-  - name: Non_collision_wall
-    uniqueID: 3726073413
     locked: 0
   m_RenderingLayers:
   - Default
