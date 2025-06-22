@@ -59,5 +59,8 @@ TagManager:
   - name: Wall_Hight
     uniqueID: 1072850359
     locked: 0
+  - name: Non_collision_wall
+    uniqueID: 3726073413
+    locked: 0
   m_RenderingLayers:
   - Default
