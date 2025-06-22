@@ -69778,6 +69778,8 @@ GameObject:
   - component: {fileID: 1628874308}
   - component: {fileID: 1628874307}
   - component: {fileID: 1628874312}
+  - component: {fileID: 1628874314}
+  - component: {fileID: 1628874313}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69957,6 +69959,36 @@ MonoBehaviour:
   take_damage: 0
   speed: 5
   deffub_knock: 2
+--- !u!114 &1628874313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628874306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff5063a220b7fb44ab8965ec3096d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1.5
+  attackDamage: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1628874314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628874306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58c980de0bf5eb46b402e0242d7a8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1819646595
 GameObject:
   m_ObjectHideFlags: 0
