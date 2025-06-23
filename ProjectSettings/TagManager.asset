@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - First floor
+  - Second floor
   - 
   - 
   - 
@@ -46,9 +46,6 @@ TagManager:
     locked: 0
   - name: Second floor
     uniqueID: 3309360379
-    locked: 0
-  - name: Player
-    uniqueID: 3746132787
     locked: 0
   m_RenderingLayers:
   - Default
