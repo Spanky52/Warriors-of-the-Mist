@@ -6,18 +6,40 @@ public class PlayerAttack : MonoBehaviour
     public int attackDamage = 10;
     public LayerMask enemyLayer;
 
-    void Update()
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private Move moveScript;
+
+    private bool isAttacking = false;
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) // estamos usando la tecla espacio por ahora 
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        moveScript = GetComponent<Move>();
+    }
+
+    public void TriggerAttack()
+    {
+        if (isAttacking || animator.GetBool("isDead")) return;
+
+        isAttacking = true;
+        animator.SetTrigger("Atack_Katana_Player");
+
+        // Bloquea el movimiento desde Move.cs
+        if (moveScript != null)
         {
-            Attack();
+            moveScript.BlockMovement();
         }
     }
 
-    void Attack()
+    // Este se llama desde Animation Event
+    public void ApplyAttackDamage()
     {
-        // detecta enemigos en un circulo
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, enemyLayer);
+        Vector2 direction = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+        Vector2 origin = (Vector2)transform.position + direction * 0.5f;
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(origin, attackRange, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -28,13 +50,33 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        Debug.Log("Ejecutando ataque");
+        Debug.Log("Daño aplicado durante la animación");
     }
 
-    private void OnDrawGizmosSelected()
+    // Este se llama al final de la animación
+    public void FinishAttack()
     {
-        // Visualiza el rango de ataque en la escena
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        isAttacking = false;
+
+        if (moveScript != null)
+        {
+            moveScript.UnblockMovement();
+        }
+    }
+
+    public void CancelAttack()
+    {
+        isAttacking = false;
+        animator.ResetTrigger("Atack_Katana_Player");
+
+        if (moveScript != null)
+        {
+            moveScript.UnblockMovement();
+        }
+    }
+
+    public bool IsAttacking()
+    {
+        return isAttacking;
     }
 }

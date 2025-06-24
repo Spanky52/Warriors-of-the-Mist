@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 30;
     private int currentHealth;
 
     public delegate void OnDeath();
@@ -41,13 +41,18 @@ public class Health : MonoBehaviour
 
         if (CompareTag("Player"))
         {
-            // Podrías activar Game Over aquí más adelante
-            // Ej: GameManager.Instance.GameOver();
+            Move move = GetComponent<Move>();
+            if (move != null)
+            {
+                move.OnDeath();
+            }
+
+            // Notificar al GameManager
+            GameManager.Instance?.SetPlayerDead();
         }
         else
         {
-            Destroy(gameObject); // Enemigos desaparecen al morir
+            Destroy(gameObject);
         }
     }
 }
-

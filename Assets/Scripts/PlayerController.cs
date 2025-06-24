@@ -1,6 +1,4 @@
-using System.Threading;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Move : MonoBehaviour
 {
@@ -9,32 +7,52 @@ public class Move : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    public bool take_damage;
     public float speed = 5f;
-    public float deffub_knock = 2f;
+    public float knockbackForce = 5f;
+    public float knockbackDuration = 0.5f;
 
-    private void Start()
+    private bool isTakingDamage = false;
+    private bool isDead = false;
+    private float knockbackTimer;
+
+    private bool movementBlocked = false;
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // pa voltear el sprite
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        Movement();
-    }
+        if (isDead) return;
 
+        if (!isTakingDamage && !movementBlocked)
+        {
+            Movement();
+        }
+        else if (isTakingDamage)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            if (knockbackTimer <= 0)
+            {
+                isTakingDamage = false;
+                animator.SetBool("take_damage", false);
+            }
+        }
+    }
 
     public void Movement()
     {
+        if (isDead) return;
+
         Vector2 direction = movementJoystick.Direction;
 
         if (direction.magnitude > 0.1f)
         {
             rb.linearVelocity = direction * speed;
 
-            // voltear sprite
             if (direction.x != 0)
             {
                 spriteRenderer.flipX = direction.x < 0;
@@ -45,25 +63,47 @@ public class Move : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
 
-        // animacion
         animator.SetFloat("Speed", direction.magnitude);
     }
 
-    public void Take_Damage()
+    public void TakeDamage(Vector2 sourcePosition)
     {
+        if (isDead || isTakingDamage) return;
 
-        animator.SetBool("take_damage", take_damage);
+        isTakingDamage = true;
+        knockbackTimer = knockbackDuration;
 
-        R_Damage();
+        animator.SetBool("take_damage", true);
 
+        Vector2 knockbackDir = ((Vector2)transform.position - sourcePosition).normalized;
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
     }
 
-    public void R_Damage()
+    public void OnDeath()
     {
-        take_damage = false;
+        isDead = true;
+        animator.SetTrigger("Death_Player");
+        animator.SetBool("isDead", true);
 
-        Vector2 knock_back = new Vector2(transform.position.x, 0).normalized;
-        rb.AddForce(knock_back * deffub_knock, ForceMode2D.Impulse);
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
+
+        // Cancelar ataque si está atacando
+        PlayerAttack attack = GetComponent<PlayerAttack>();
+        if (attack != null)
+        {
+            attack.CancelAttack();
+        }
+    }
+
+    public void BlockMovement()
+    {
+        movementBlocked = true;
+    }
+
+    public void UnblockMovement()
+    {
+        movementBlocked = false;
     }
 }
-

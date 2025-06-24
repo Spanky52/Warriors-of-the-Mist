@@ -1,4 +1,3 @@
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -12,22 +11,36 @@ public class EnemyController : MonoBehaviour
 
     public float range_agro = 15f;
     public float speed = 5f;
-    
+    private bool playerIsAlive = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (player != null)
+        {
+            Health playerHealth = player.GetComponent<Health>();
+
+            if (GameManager.Instance != null && GameManager.Instance.IsPlayerDead)
+            {
+                playerIsAlive = false;
+                animator.SetBool("has_a_target", false);
+            }
+            else if (playerHealth != null)
+            {
+                playerHealth.onDeath += OnPlayerDeath;
+            }
+        }
     }
 
     void Update()
     {
+        if (!playerIsAlive) return;
 
         Follow_Player();
-
     }
-
 
     public void Follow_Player()
     {
@@ -43,7 +56,6 @@ public class EnemyController : MonoBehaviour
             if (player.position.x < transform.position.x) { spriteRenderer.flipX = true; }
             if (player.position.x > transform.position.x) { spriteRenderer.flipX = false; }
         }
-
         else
         {
             has_a_target = false;
@@ -52,14 +64,12 @@ public class EnemyController : MonoBehaviour
 
         animator.SetBool("has_a_target", has_a_target);
         rb.MovePosition(rb.position + move * speed * Time.deltaTime);
-
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnPlayerDeath()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //Take_Damage() de Player
-        }
+        playerIsAlive = false;
+        has_a_target = false;
+        animator.SetBool("has_a_target", false);
     }
 }

@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 48de1a2fbe7aec84e85a5dabc40f4861
+guid: 0ed8c990a466cb54ab063e19726631ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4726913989911992049
-    second: RUN_0
+      213: 6768895310804992788
+    second: player katana continuous attack 80x64_0
   - first:
-      213: -1224304467317232117
-    second: RUN_1
+      213: -7465316735303243656
+    second: player katana continuous attack 80x64_1
   - first:
-      213: 3159551424834153068
-    second: RUN_2
+      213: -3934771436587813544
+    second: player katana continuous attack 80x64_2
   - first:
-      213: -4270742793311013030
-    second: RUN_3
+      213: 3156304238382823820
+    second: player katana continuous attack 80x64_3
   - first:
-      213: -4469841436486958459
-    second: RUN_4
+      213: 3993068899459606258
+    second: player katana continuous attack 80x64_4
   - first:
-      213: -5792612846293609617
-    second: RUN_5
+      213: -2427646852707415045
+    second: player katana continuous attack 80x64_5
   - first:
-      213: -2380123854543253929
-    second: RUN_6
+      213: -8594523477657771431
+    second: player katana continuous attack 80x64_6
   - first:
-      213: -337668074351880697
-    second: RUN_7
+      213: 6306184786978839668
+    second: player katana continuous attack 80x64_7
+  - first:
+      213: -3542120026856641781
+    second: player katana continuous attack 80x64_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RUN_0
+      name: player katana continuous attack 80x64_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 5
-        width: 57
-        height: 58
+        x: 0
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f09a87b35c0a66eb0800000000000000
-      internalID: -4726913989911992049
+      spriteID: 413c65a0c62ffed50800000000000000
+      internalID: 6768895310804992788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_1
+      name: player katana continuous attack 80x64_1
       rect:
         serializedVersion: 2
-        x: 180
-        y: 5
-        width: 48
-        height: 58
+        x: 80
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +161,64 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0ee1a8d295620fe0800000000000000
-      internalID: -1224304467317232117
+      spriteID: 878a8707bfdd56890800000000000000
+      internalID: -7465316735303243656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_2
+      name: player katana continuous attack 80x64_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85574d9c932e469c0800000000000000
+      internalID: -3934771436587813544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player katana continuous attack 80x64_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c893ed36bf17dcb20800000000000000
+      internalID: 3156304238382823820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player katana continuous attack 80x64_4
       rect:
         serializedVersion: 2
         x: 320
-        y: 6
-        width: 58
-        height: 59
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6aa1d6e74bf8db20800000000000000
-      internalID: 3159551424834153068
+      spriteID: 2f623f3020b3a6730800000000000000
+      internalID: 3993068899459606258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_3
+      name: player katana continuous attack 80x64_5
       rect:
         serializedVersion: 2
-        x: 461
-        y: 5
-        width: 66
-        height: 61
+        x: 400
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5733ad8e064bb4c0800000000000000
-      internalID: -4270742793311013030
+      spriteID: bfb8748bc044f4ed0800000000000000
+      internalID: -2427646852707415045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_4
+      name: player katana continuous attack 80x64_6
       rect:
         serializedVersion: 2
-        x: 625
-        y: 5
-        width: 49
-        height: 58
+        x: 480
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5828fdf45eee7f1c0800000000000000
-      internalID: -4469841436486958459
+      spriteID: 952247cce6e1ab880800000000000000
+      internalID: -8594523477657771431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_5
+      name: player katana continuous attack 80x64_7
       rect:
         serializedVersion: 2
-        x: 767
-        y: 5
-        width: 52
-        height: 59
+        x: 560
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f631e4f8e418c9fa0800000000000000
-      internalID: -5792612846293609617
+      spriteID: 47c98d3f6a1148750800000000000000
+      internalID: 6306184786978839668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RUN_6
+      name: player katana continuous attack 80x64_8
       rect:
         serializedVersion: 2
-        x: 905
-        y: 8
-        width: 62
-        height: 58
+        x: 640
+        y: 0
+        width: 80
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,30 +315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75e0488f6f918fed0800000000000000
-      internalID: -2380123854543253929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RUN_7
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 5
-        width: 57
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7061448ecac505bf0800000000000000
-      internalID: -337668074351880697
+      spriteID: b0ba96f3a9cd7dec0800000000000000
+      internalID: -3542120026856641781
       vertices: []
       indices: 
       edges: []
@@ -300,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cb62b89bc16193643ae5f7b60b6fcd51
     internalID: 0
     vertices: []
     indices: 
@@ -308,16 +333,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":80.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RUN_0: -4726913989911992049
-      RUN_1: -1224304467317232117
-      RUN_2: 3159551424834153068
-      RUN_3: -4270742793311013030
-      RUN_4: -4469841436486958459
-      RUN_5: -5792612846293609617
-      RUN_6: -2380123854543253929
-      RUN_7: -337668074351880697
+      player katana continuous attack 80x64_0: 6768895310804992788
+      player katana continuous attack 80x64_1: -7465316735303243656
+      player katana continuous attack 80x64_2: -3934771436587813544
+      player katana continuous attack 80x64_3: 3156304238382823820
+      player katana continuous attack 80x64_4: 3993068899459606258
+      player katana continuous attack 80x64_5: -2427646852707415045
+      player katana continuous attack 80x64_6: -8594523477657771431
+      player katana continuous attack 80x64_7: 6306184786978839668
+      player katana continuous attack 80x64_8: -3542120026856641781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
