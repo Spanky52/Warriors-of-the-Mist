@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DamagePlayerOnContact : MonoBehaviour
 {
-    public int damage = 10;
+    public int damage = 5;
     public float damageCooldown = 1f;
     private float lastHitTime;
 
@@ -10,7 +10,7 @@ public class DamagePlayerOnContact : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && Time.time > lastHitTime + damageCooldown)
         {
-            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            HealthPlayer playerHealth = collision.gameObject.GetComponent<HealthPlayer>();
             Move playerMove = collision.gameObject.GetComponent<Move>();
 
             if (playerHealth != null && playerMove != null)

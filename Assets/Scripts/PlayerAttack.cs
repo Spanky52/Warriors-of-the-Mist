@@ -24,16 +24,16 @@ public class PlayerAttack : MonoBehaviour
         if (isAttacking || animator.GetBool("isDead")) return;
 
         isAttacking = true;
-        animator.SetTrigger("Atack_Katana_Player");
+        animator.SetTrigger("Attack_Katana_Player");
 
-        // Bloquea el movimiento desde Move.cs
+        // Bloquea el movimiento (desde PlayerController)
         if (moveScript != null)
         {
             moveScript.BlockMovement();
         }
     }
 
-    // Este se llama desde Animation Event
+    // Animation Event
     public void ApplyAttackDamage()
     {
         Vector2 direction = spriteRenderer.flipX ? Vector2.left : Vector2.right;
@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Health health = enemy.GetComponent<Health>();
+            HealthEnemy health = enemy.GetComponent<HealthEnemy>();
             if (health != null)
             {
                 health.TakeDamage(attackDamage);
@@ -53,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("Daño aplicado durante la animación");
     }
 
-    // Este se llama al final de la animación
+    // Animation Event
     public void FinishAttack()
     {
         isAttacking = false;
@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
     public void CancelAttack()
     {
         isAttacking = false;
-        animator.ResetTrigger("Atack_Katana_Player");
+        animator.ResetTrigger("Attack_Katana_Player");
 
         if (moveScript != null)
         {

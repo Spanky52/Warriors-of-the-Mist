@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7646789781651381661}
   - component: {fileID: 1824640213552445553}
   - component: {fileID: 5187004670988802579}
-  - component: {fileID: 8728964748561624283}
   - component: {fileID: 4360118791916836792}
+  - component: {fileID: 609819409600009493}
   m_Layer: 6
   m_Name: Enemy_Velociraptor
   m_TagString: Untagged
@@ -202,20 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   range_agro: 15
-  speed: 8
---- !u!114 &8728964748561624283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8227934496674192565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a58c980de0bf5eb46b402e0242d7a8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
+  speed: 5
 --- !u!114 &4360118791916836792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +217,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   damageCooldown: 1
+--- !u!114 &609819409600009493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227934496674192565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d23eed61d3c6c94caf79e97e84f2eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20

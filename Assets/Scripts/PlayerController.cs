@@ -17,11 +17,14 @@ public class Move : MonoBehaviour
 
     private bool movementBlocked = false;
 
+    private HealthPlayer healthPlayer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthPlayer = GetComponent<HealthPlayer>();
     }
 
     void FixedUpdate()
@@ -89,7 +92,7 @@ public class Move : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
 
-        // Cancelar ataque si está atacando
+        // Cancelar ataque si esta atacando
         PlayerAttack attack = GetComponent<PlayerAttack>();
         if (attack != null)
         {

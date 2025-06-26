@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // persiste entre escenas si es necesario
+            DontDestroyOnLoad(gameObject); // persiste entre escenas(si es necesario :v)
         }
     }
 

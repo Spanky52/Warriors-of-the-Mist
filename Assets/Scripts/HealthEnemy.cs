@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class HealthEnemy : MonoBehaviour
 {
     public int maxHealth = 30;
     private int currentHealth;
@@ -8,9 +8,14 @@ public class Health : MonoBehaviour
     public delegate void OnDeath();
     public event OnDeath onDeath;
 
+    private Animator animator;
+    private EnemyDespawn despawnScript;
+
     private void Start()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        despawnScript = GetComponent<EnemyDespawn>();
     }
 
     public void TakeDamage(int damage)
@@ -24,11 +29,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
-    {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-    }
-
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -37,22 +37,16 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log($"{gameObject.name} murió.");
-        onDeath?.Invoke();
+        animator?.SetTrigger("Dead_Velociraptor");
 
-        if (CompareTag("Player"))
+        EnemyController controller = GetComponent<EnemyController>();
+        if (controller != null)
         {
-            Move move = GetComponent<Move>();
-            if (move != null)
-            {
-                move.OnDeath();
-            }
+            controller.OnDeath();
+        }
 
-            // Notificar al GameManager
-            GameManager.Instance?.SetPlayerDead();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        despawnScript?.spawner?.NotifyEnemyKilled();
+
+        Destroy(gameObject, 5f);
     }
 }

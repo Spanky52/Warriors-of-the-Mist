@@ -53,7 +53,7 @@ public class SpawnerOfEnemys : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (currentEnemies >= maxEnemies) return;
+        if (currentEnemies >= maxEnemies)return;
 
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
